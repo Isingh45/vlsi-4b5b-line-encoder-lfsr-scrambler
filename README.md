@@ -81,7 +81,12 @@ Presentation/
     CMPE480_Final_Presentation.pptx
 
 Design_Files/
-    LogicWorks_Files.zip
+    Count.cct
+    ShiftReg5.cct
+    mux5x1.cct
+    DflipFlop.cct
+    2nd_stage.cct
+    3rd_stage.cct
 ```
 
 ---
