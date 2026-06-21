@@ -4,7 +4,7 @@
 
 This project implements a digital communication pipeline featuring 4B/5B encoding, dual 16-bit LFSR scrambling/descrambling, serialization, and decoding logic. The system was developed using LogicWorks for schematic design and Magic VLSI for CMOS layout implementation and verification.
 
-The project demonstrates a hierarchical VLSI design flow, progressing from digital logic design and subsystem verification to physical layout generation and simulation-based validation.
+The project demonstrates a hierarchical VLSI design flow from digital logic design and subsystem verification to physical layout generation and simulation-based validation.
 
 ---
 
@@ -14,7 +14,7 @@ The project demonstrates a hierarchical VLSI design flow, progressing from digit
 * 4B/5B Decoder
 * Dual 16-bit XNOR-LFSR Scrambler/Descrambler
 * 5-bit Shift Register
-* 5x1 Serializer Multiplexer
+* 5×1 Serializer Multiplexer
 * Mod-5 Counter
 * CMOS Layout Design in Magic VLSI
 * IRSIM-Based Functional Verification
@@ -29,12 +29,12 @@ The communication pipeline consists of the following major subsystems:
 1. 4B/5B Encoder
 2. Dual 16-bit LFSR Scrambler
 3. Mod-5 Counter
-4. 5x1 Serializer Multiplexer
+4. 5×1 Serializer Multiplexer
 5. 5-bit Shift Register
 6. Dual 16-bit LFSR Descrambler
 7. 4B/5B Decoder
 
-The architecture improves transition density during transmission while demonstrating digital communication concepts commonly used in high-speed serial systems.
+The architecture improves transition density during serial transmission while demonstrating digital communication concepts commonly used in high-speed communication systems.
 
 ---
 
@@ -78,13 +78,13 @@ Report/
     CMPE480_Final_Report.pdf
 
 Presentation/
-    CMPE480_Final_Presentation.pptx
+    CMPE480_VLSI_Project_Presentation.pptx
 
 Design_Files/
     Count.cct
     ShiftReg5.cct
     mux5x1.cct
-    DflipFlop.cct
+    DFlipFlop.cct
     2nd_stage.cct
     3rd_stage.cct
 ```
@@ -103,16 +103,16 @@ Design_Files/
 
 ## Project Status
 
-The project successfully demonstrated the functionality of the communication pipeline through schematic verification, physical layout implementation, and simulation-based validation.
+The project successfully demonstrated communication-pipeline functionality through schematic verification, physical layout implementation, and simulation-based validation.
 
-Future improvements may include expanded system integration, additional long-duration validation testing, and further physical design optimization for production-level implementation.
+Future improvements may include expanded system integration, additional long-duration validation testing, and further physical design optimization.
 
 ---
 
 ## Academic Context
 
-California State University, East Bay
+**California State University, East Bay**
 
-CMPE 480 — VLSI Circuit Design/Layout
+**CMPE 480 – VLSI Circuit Design/Layout**
 
-Spring 2026
+**Spring 2026**
