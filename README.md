@@ -1,24 +1,24 @@
-# VLSI 4B/5B Line Encoder with Dual LFSR Scrambling
+# VLSI Design: 4B/5B Communication System with Dual 16-bit LFSR Scrambling
 
 ## Overview
 
-This project implements a digital communication pipeline featuring 4B/5B encoding, dual 16-bit LFSR scrambling/descrambling, serialization, and decoding logic. The system was developed using LogicWorks for schematic design and Magic VLSI for CMOS layout implementation and verification.
+This project implements a complete digital communication pipeline featuring 4B/5B line encoding, serial data transmission, dual 16-bit LFSR scrambling/descrambling, and end-to-end data recovery. The system was developed using a hierarchical CMOS design methodology, progressing from digital logic design and subsystem verification to physical layout implementation and simulation-based validation.
 
-The project demonstrates a hierarchical VLSI design flow from digital logic design and subsystem verification to physical layout generation and simulation-based validation.
+The project demonstrates core VLSI design concepts including combinational and sequential logic design, hierarchical circuit integration, CMOS layout development, and functional verification.
 
 ---
 
 ## Key Features
 
-* 4B/5B Encoder
-* 4B/5B Decoder
+* 4B/5B Line Encoder
+* 4B/5B Line Decoder
 * Dual 16-bit XNOR-LFSR Scrambler/Descrambler
-* 5-bit Shift Register
 * 5×1 Serializer Multiplexer
-* Mod-5 Counter
-* CMOS Layout Design in Magic VLSI
-* IRSIM-Based Functional Verification
-* Hierarchical Digital System Integration
+* Synchronous Mod-5 Counter
+* 5-bit Shift Register
+* Hierarchical CMOS Design
+* Magic VLSI Physical Layout
+* IRSIM Functional Verification
 
 ---
 
@@ -26,37 +26,52 @@ The project demonstrates a hierarchical VLSI design flow from digital logic desi
 
 The communication pipeline consists of the following major subsystems:
 
-1. 4B/5B Encoder
-2. Dual 16-bit LFSR Scrambler
-3. Mod-5 Counter
-4. 5×1 Serializer Multiplexer
-5. 5-bit Shift Register
-6. Dual 16-bit LFSR Descrambler
-7. 4B/5B Decoder
+```
+4-bit Parallel Input
+        ↓
+4B/5B Encoder
+        ↓
+Synchronous Mod-5 Counter
+        ↓
+5×1 Serializer Multiplexer
+        ↓
+Dual 16-bit LFSR Scrambler
+        ↓
+Serial Transmission
+        ↓
+Dual 16-bit LFSR Descrambler
+        ↓
+5-bit Shift Register
+        ↓
+4B/5B Decoder
+        ↓
+Recovered 4-bit Output
+```
 
-The architecture improves transition density during serial transmission while demonstrating digital communication concepts commonly used in high-speed communication systems.
+The architecture improves transition density during serial communication while demonstrating digital communication concepts commonly used in high-speed communication systems.
 
 ---
 
 ## Design Methodology
 
-### Logic Design
+### Digital Logic Design
 
-* Developed subsystem schematics using LogicWorks.
-* Implemented encoder, decoder, serializer, counter, shift register, and LFSR modules.
-* Verified functional correctness through hierarchical testing and simulation.
+* Developed subsystem schematics using LogicWorks
+* Designed encoder, decoder, serializer, Mod-5 counter, shift register, and LFSR modules
+* Applied a hierarchical design methodology to integrate validated subsystems into a complete communication pipeline
+* Verified subsystem functionality through simulation before full-system integration
 
 ### Physical Design
 
-* Implemented CMOS layouts using Magic VLSI.
-* Applied hierarchical layout techniques to construct larger system modules from validated subcircuits.
-* Performed extraction and layout verification across multiple design stages.
+* Implemented CMOS layouts using Magic VLSI
+* Built reusable standard-cell based layouts using hierarchical design techniques
+* Performed layout extraction and verification throughout the physical design process
 
 ### Verification
 
-* Utilized IRSIM waveform analysis to validate subsystem functionality.
-* Verified serializer operation, counter sequencing, shift-register behavior, and communication-path timing.
-* Confirmed correct operation across integrated pipeline stages.
+* Validated subsystem functionality using IRSIM waveform analysis
+* Verified encoder and decoder operation across all 16 possible input combinations
+* Confirmed serializer operation, counter sequencing, shift-register behavior, and integrated communication-path functionality
 
 ---
 
@@ -65,15 +80,17 @@ The architecture improves transition density during serial transmission while de
 * LogicWorks
 * Magic VLSI
 * IRSIM
-* CMOS Design
+* CMOS Layout Design
 * Digital Logic Design
-* VLSI Layout Design
+* VLSI Circuit Design
+* Sequential Logic Design
+* Combinational Logic Design
 
 ---
 
-## Repository Contents
+## Repository Structure
 
-```text
+```
 Report/
     CMPE480_Final_Report.pdf
 
@@ -81,31 +98,31 @@ Presentation/
     CMPE480_VLSI_Project_Presentation.pptx
 
 Design_Files/
-    Count.cct
-    ShiftReg5.cct
-    mux5x1.cct
-    DFlipFlop.cct
-    2nd_stage.cct
-    3rd_stage.cct
+    Encoder
+    Mod-5 Counter
+    5×1 Multiplexer
+    Shift Register
+    D Flip-Flop
+    Integrated Design Files
 ```
 
 ---
 
 ## My Contributions
 
-* Developed and verified hierarchical LogicWorks schematics.
-* Contributed to encoder, serializer, counter, shift-register, and LFSR subsystem development.
-* Implemented CMOS layouts and extraction workflows in Magic VLSI.
-* Performed simulation-based verification using IRSIM waveform analysis.
-* Assisted with system integration, validation, documentation, and final project presentation.
+* Developed and verified hierarchical LogicWorks schematics for multiple digital subsystems
+* Contributed to the design and integration of the encoder, serializer, Mod-5 counter, shift register, and LFSR communication pipeline
+* Implemented CMOS layouts using Magic VLSI and participated in layout extraction and verification
+* Performed functional verification using IRSIM waveform analysis
+* Assisted with system integration, validation, technical documentation, and final project presentation
 
 ---
 
-## Project Status
+## Project Outcome
 
-The project successfully demonstrated communication-pipeline functionality through schematic verification, physical layout implementation, and simulation-based validation.
+This project successfully demonstrated the complete design flow of a hierarchical VLSI communication system—from digital logic design and subsystem development to CMOS layout implementation and simulation-based verification.
 
-Future improvements may include expanded system integration, additional long-duration validation testing, and further physical design optimization.
+The project strengthened practical experience in digital system design, hierarchical circuit integration, physical layout design, and verification methodologies commonly used in modern VLSI engineering.
 
 ---
 
@@ -116,3 +133,9 @@ Future improvements may include expanded system integration, additional long-dur
 **CMPE 480 – VLSI Circuit Design/Layout**
 
 **Spring 2026**
+
+**Team Members**
+
+* Sukhpinder Singh
+* Inderpal Singh
+* Wasi Mohammed
